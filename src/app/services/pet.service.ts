@@ -11,24 +11,24 @@ export class PetService {
   constructor(private httpRequest:HttpClient) { }
 
   addPets(pet:Pet):Observable<any>{
-    return this.httpRequest.post("http://localhost:3000/pet/add",pet);
+    return this.httpRequest.post("https://petmanager-be.herokuapp.com/pet/add",pet);
   }
 
   getAllPets():Observable<any>{
-    return this.httpRequest.get("http://localhost:3000/pet/All");
+    return this.httpRequest.get("https://petmanager-be.herokuapp.com/pet/All");
 }
 
   getPet(ID:number):Observable<any>{
-    return this.httpRequest.get(`http://localhost:3000/pet/${ID}`);
+    return this.httpRequest.get(`https://petmanager-be.herokuapp.com/pet/${ID}`);
   }
 
   updatePet(pet:Pet,id:number):Observable<any>{
-   return  this.httpRequest.put(`http://localhost:3000/pet/update/${id}`,pet);
+   return  this.httpRequest.put(`https://petmanager-be.herokuapp.com/pet/update/${id}`,pet);
 
   }
 
   deletePet(id:number):Observable<any>{
-    return this.httpRequest.delete(`http://localhost:3000/pet/${id}`);
+    return this.httpRequest.delete(`https://petmanager-be.herokuapp.com/pet/${id}`);
   }
 
 }
